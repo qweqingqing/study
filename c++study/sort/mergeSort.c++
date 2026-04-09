@@ -2,7 +2,6 @@
 #include<vector>
 #include<algorithm>
 using namespace std;
-
 void merge(vector<int>&a,int l,int mid,int r){
     vector<int>c;
     c.reserve(a.size());
@@ -15,12 +14,10 @@ void merge(vector<int>&a,int l,int mid,int r){
         }
         else{
             a[k]=c[j++];
-        }
-            
+        }    
     }
     while (i<=mid) a[k++]=c[i++];
     while (j<=r)a[k++]=c[j++];
-
 }
 
 void mergeSort(vector<int>&a,int l,int r){
@@ -29,21 +26,17 @@ void mergeSort(vector<int>&a,int l,int r){
         mergeSort(a,l,mid);
         mergeSort(a,mid+1,r);
         merge(a,l,mid,r);
-
     }
 }
+
 int main() {
     vector<int> arr = {5, 2, 9, 1, 3, 7};
-
     cout << "排序前：";
     for (int num : arr) cout << num << " ";
     cout << endl;
-
     mergeSort(arr, 0, arr.size() - 1);  // 右边界是 size-1！
-
     cout << "排序后：";
     for (int num : arr) cout << num << " ";
     cout << endl;
-
     return 0;
 }
