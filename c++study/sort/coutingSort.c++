@@ -12,7 +12,7 @@ void countingSort(vector<int>&a){//王道，可以用负数，对象结构体
     int length=m-l+1;
     vector<int>b(length,0);
     for(int i=0;i<a.size();i++){
-        b[a[i]-l]++;
+        b[a[i]-l]++;//a[i]-l，偏移量，比如为-5，则减去他本身，以0为下标了
     }
 // 前缀和（王道核心）
     for(int i=1;i<length;i++){
