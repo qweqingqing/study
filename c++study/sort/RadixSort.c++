@@ -80,3 +80,11 @@ void radixSortQueue(vector<int>& nums) {
         }
     }
 }
+
+int main(){
+    vector<int>a={7456,7543,2343,8765,3456,8765};
+    radixSort(a);
+    for(int i:a)
+        cout<<i<<" ";
+
+}
